@@ -25,47 +25,47 @@
 
 function shoppingTime(memberId, money) {
     // you can only write your code here!
-    var shopping = {}
-  var barang = [
-                  ['Sepatu Stacattu', 1500000],
-                  ['Baju Zoro', 500000],
-                  ['Baju H&N', 250000],
-                  ['Sweater Uniklooh', 175000],
-                  ['Casing Handphone', 50000]
-               ]
-  
-  if(memberId === undefined && money === undefined){
-    return 'Mohon maaf, toko X hanya berlaku untuk member saja'
-  }
-  
-  if(memberId === ''){
-    return "Mohon maaf, toko X hanya berlaku untuk member saja"
-  } else {
-    shopping['memberId'] = memberId
-    // console.log(shopping.memberId = memberId)
-  }
-  
-  if(money <= 50000 ){
-    return 'Mohon maaf, uang tidak cukup'
-  } else {
-    shopping['money'] = money
-    // console.log(shopping.money = money)
-  }
-  
-  var jumlahHargaBarang = 0
-  shopping.listPurchased = []
-  for(var i = 0; i < barang.length; i++){
-    
-    if(money > barang[i][1]){
-        // console.log("liat doang :  "+barang[i][1])
-      shopping.listPurchased.push(barang[i][0])
-      jumlahHargaBarang += barang[i][1]
-    //   console.log(jumlahHargaBarang += barang[i][1]+"  ini angkanya")
+ 
+    var shop = {
+      memberId :memberId,
+      money :money,
+      listPurchased :[],
+      changeMoney : 0,
+      
     }
-    shopping.changeMoney = money - jumlahHargaBarang
-    // console.log(shopping.changeMoney = money - jumlahHargaBarang + "    ini yaya pinter")
-  }
-   return shopping
+    if ( memberId == '' || memberId == undefined || money == undefined){
+      return "Mohon maaf, toko X hanya berlaku untuk member saja"   
+    }
+    if (money < 50000 ){
+      return "Mohon maaf, uang tidak cukup"  
+    }else {
+      var harga = [1500000, 500000, 250000, 175000, 50000]
+      // for ( var j = 0; j < harga.length; j++){
+        if ( money >= 1500000){
+          shop.listPurchased.push(' Sepatu Stacattu')
+          shop.changeMoney +=  1500000
+        }
+        if ( money >= 500000){
+          shop.listPurchased.push(' Baju Zoro')
+          shop.changeMoney +=  500000
+        }
+        if ( money >= 250000){
+          shop.listPurchased.push(' Baju H&N')
+          shop.changeMoney +=  250000
+        }
+        if ( money >= 175000){
+          shop.listPurchased.push(' Sweater Unikloh')
+          shop.changeMoney +=  175000
+        }
+        if ( money >= 50000){
+          shop.listPurchased.push(' Case Handphone')
+          shop.changeMoney +=  50000
+        }
+      }
+      // }
+    
+
+    console.log(shop)
 }
 
 // TEST CASES
