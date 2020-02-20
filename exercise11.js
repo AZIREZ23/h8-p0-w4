@@ -30,7 +30,7 @@ function shoppingTime(memberId, money) {
       memberId :memberId,
       money :money,
       listPurchased :[],
-      changeMoney : 0,
+      changeMoney : money
       
     }
     if ( memberId == '' || memberId == undefined || money == undefined){
@@ -43,23 +43,23 @@ function shoppingTime(memberId, money) {
       // for ( var j = 0; j < harga.length; j++){
         if ( money >= 1500000){
           shop.listPurchased.push(' Sepatu Stacattu')
-          shop.changeMoney +=  1500000
+          shop.changeMoney -=  1500000
         }
         if ( money >= 500000){
           shop.listPurchased.push(' Baju Zoro')
-          shop.changeMoney +=  500000
+          shop.changeMoney -=  500000
         }
         if ( money >= 250000){
           shop.listPurchased.push(' Baju H&N')
-          shop.changeMoney +=  250000
+          shop.changeMoney -=  250000
         }
         if ( money >= 175000){
           shop.listPurchased.push(' Sweater Unikloh')
-          shop.changeMoney +=  175000
+          shop.changeMoney -=  175000
         }
         if ( money >= 50000){
           shop.listPurchased.push(' Case Handphone')
-          shop.changeMoney +=  50000
+          shop.changeMoney -=  50000
         }
       }
       // }
