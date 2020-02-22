@@ -9,23 +9,25 @@
 //     John Doe: { firstName: 'John', lastName: 'Doe', gender: 'male', age: 18 }
 
 function changeMe(arr) {
-    // you can only write your code here!
-    // var tampung = {}
-    // var gabung = []
-    var nomor =0
-    for (var i = 0; i < arr.length; i++) {
-        console.log(++nomor+". "+ arr[i][0] + " "+arr[i][1])
+    var awal = 0;
+    
+    for ( var i = 0; i < arr.length; i ++){
+        console.log ( ++awal +". "+ arr[i][0]+ " "+ arr[i][0])
         var tampung = {
-        firstName : arr[i][0],
-        lastName : arr[i][1],
-        gender : arr[i][2],
-        age : 2018 - arr[i][3]
+            firstName : arr[i][0],
+            lastName : arr[i][1],
+            gender : arr[i][2],
+            age : 2018 - arr[i][3]
+     
         }
-        if (tampung.age == NaN) {
-            tampung.age = 'Invalid Birth Year'
-        }
+        if ( tampung.age - 2018 == false){
+            tampung.age = 'invalid bird years'
+    }
         console.log(tampung)
-    }    
+    
+    }
+    
+    
 }
 
 // TEST CASES

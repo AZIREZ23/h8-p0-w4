@@ -11,8 +11,7 @@ function digitPerkalianMinimum(angka) {
     for (var j = 0; j <= angka; j++) {
       if (i * j === angka) {
         var gabung = i.toString() + j.toString()
-        tampung.push(gabung)
-        
+        tampung.push(gabung)        
         // console.log("ini i : "+i.toString() + j.toString())
         // console.log("ini tampung" + tampung)
         // console.log ("ini angka : " +angka )
@@ -27,11 +26,8 @@ function digitPerkalianMinimum(angka) {
       // console.log( tampung[k].length)
       }
     }
-    return angkaDepan
-  
+    return angkaDepan 
   }
-  
-  
 // TEST CASES
 console.log(digitPerkalianMinimum(24)); // 2
 console.log(digitPerkalianMinimum(90)); // 3

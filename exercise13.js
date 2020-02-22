@@ -22,33 +22,21 @@
 
 function deepSum(arr) {
     // Code disini
-    var i=0;
-    // inisialisasi variabel countArr sebagai penampung kalkulasi
-    var countArr = 0;
-    
-    // kondisi apabila arr tidak memiliki nilai/ array kosong
+
+    var hitung = 0;    
     if (arr.length !== 0) {
-        // iterasi tingkat i
-        for (i; i<arr.length; i++) {
-            var j=0;
+        for (var i = 0; i<arr.length; i++) {
             var lengthJ = arr[i].length;
-            
-            // iterasi tingkat j
-            for (j; j<lengthJ; j++) {
-                var k = 0;
+            for (var j = 0; j<lengthJ; j++) {
                 var lengthK = arr[i][j].length;
-                
-                // iterasi tingkat k
-                for (k; k<lengthK; k++) {
-                    countArr += arr[i][j][k];
+                for (var k =0; k<lengthK; k++) {
+                    hitung += arr[i][j][k];
                 }
             }
         }
+        return hitung;
         
-        // mengembalikan nilai countArr
-        return countArr;
-        
-    } else { // kondisi apabila arr = array kosong
+    } else { 
         return 'No number!';
     }
 }

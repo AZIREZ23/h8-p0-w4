@@ -16,7 +16,6 @@ function fpb(angka1, angka2) {
       temp2.push(j)
     }
   }
-
   var hasil = []
   var akhir = 0
   for (var k = 0; k < temp1.length - 1; k++) {
@@ -25,11 +24,8 @@ function fpb(angka1, angka2) {
         akhir=temp1[k]
         hasil.push(temp1[k])
         akhir =hasil[ hasil.length - 1]
-      }
-      
-  
-    }
-    
+      }  
+    }   
   }
 return akhir
 }

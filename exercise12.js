@@ -14,23 +14,37 @@
 // Function countProfit akan mengembalikan/me-return sebuah array of object dimana array tersebut berisi objek-objek barang dari toko X tersebut yang berisikan info nama barang, siapa saja yang membeli, sisa stock barang dan total pemasukan untuk barang tersebut
 
 function countProfit(shoppers) {
+    
+    var hasilnya = []
     let listBarang = [
         ['Sepatu Stacattu', 1500000, 10],
         ['Baju Zoro', 500000, 2],
         ['Sweater Uniklooh', 175000, 1]
     ];
-    var barangTokoX ={}
-    for (var i = 0; i < listBarang.length; i++){
-        barangTokoX.product = listBarang[i][0]
-        console.log(barangTokoX)
-    }
-    if (product == barangTokoX.product){
-        
-    }
-    
 
-    // you can only write your code here!
+    for (var i = 0; i < listBarang.length; i++) {   
+            var obj ={
+                product: listBarang[i][0],
+                shoppers: [],
+                leftOver: listBarang[i][2],
+                totalProfit: 0
+
+        }
+        for (var j = 0; j < shoppers.length; j++) {
+            if (shoppers[j].product === listBarang[i][0] && shoppers[j].amount < listBarang[i][2]) {
+                obj.shoppers.push(shoppers[j].name + ", "),
+                obj.leftOver -= shoppers[j].amount,
+                obj.totalProfit += listBarang[i][1] * shoppers[j].amount
+            }
 }
+  hasilnya.push(obj)  
+}
+// console.log(hasilnya)
+return hasilnya
+}
+// you can only write your code here!
+
+
 
 // TEST CASES
 console.log(countProfit([{
@@ -59,7 +73,7 @@ console.log(countProfit([{
 //   leftOver: 1,
 //   totalProfit: 0 } ]
 
-console.log(countProfit([{
+console.log( countProfit([{
     name: 'Windi',
     product: 'Sepatu Stacattu',
     amount: 8

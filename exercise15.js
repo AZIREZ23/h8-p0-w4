@@ -12,7 +12,30 @@
 
 function highestScore(students) {
     // Code disini
-}
+    var perbandingan = {}
+
+    for (var i = 0; i < students.length; i++) {
+        if (students[i].class !== undefined) {
+            perbandingan[students[i].class] = {
+                name : students[i].name,
+                score : students[i].score
+                
+            }
+        }
+            else if (students[i].score > perbandingan[students[i].class].score //&& students[i].class == perbandingan[students[i].class].class)
+            ){
+                perbandingan[students[i].class] = {
+                name : students[i].name,
+                score : students[i].score
+                
+            }
+        }
+
+    } return perbandingan
+    }
+    
+
+
 
 // TEST CASE
 console.log(highestScore([{
